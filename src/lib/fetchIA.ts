@@ -6,7 +6,8 @@ export default async function fetchIA(
   text: string,
   token: string
 ): Promise<IAnswerIA> {
-  const res = await fetch("http://localhost:3000/api/ia", {
+  const api = process.env.NEXT_PUBLIC_URL_API as string;
+  const res = await fetch(api + "ia", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
