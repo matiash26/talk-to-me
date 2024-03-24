@@ -1,9 +1,14 @@
 type IAnswerIA = {
   answer: string;
 };
+type IProps = {
+  id: number;
+  who: string;
+  text: string;
+};
 
 export default async function fetchIA(
-  text: string,
+  text: IProps[],
   token: string
 ): Promise<IAnswerIA> {
   const api = process.env.NEXT_PUBLIC_URL_API as string;

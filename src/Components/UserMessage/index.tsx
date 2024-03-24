@@ -13,7 +13,7 @@ function UserMessage({ message, voice }: IProps): JSX.Element {
   const spokenRef = useRef(false);
 
   useEffect(() => {
-    if (message.who !== "me" && !spokenRef.current && voice.length > 0) {
+    if (message.who !== "me" && !spokenRef.current) {
       let utterance = new SpeechSynthesisUtterance(message.text);
       utterance.volume = 1;
       utterance.rate = 1;
@@ -22,7 +22,7 @@ function UserMessage({ message, voice }: IProps): JSX.Element {
       speechSynthesis.speak(utterance);
       spokenRef.current = true;
     }
-  }, [message, voice]);
+  }, [message, voice.length, voice]);
 
   return (
     <S.container who={message.who}>

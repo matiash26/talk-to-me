@@ -5,6 +5,7 @@ import checkToken from "@/lib/checkToken";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/auth";
 import * as S from "./styles";
+
 type TChildren = { children: ReactNode };
 
 export default function RootLayout({ children }: Readonly<TChildren>) {

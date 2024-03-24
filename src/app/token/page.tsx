@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import * as S from "./style";
 import checkToken from "@/lib/checkToken";
 import { useRouter } from "next/navigation";
@@ -24,7 +24,9 @@ export default function Token() {
       setAlert("verify the token and try again");
     }
   };
-  console.log(alert);
+  useEffect(() => {
+    document.title = "login";
+  }, []);
   return (
     <S.Container>
       <S.Content>

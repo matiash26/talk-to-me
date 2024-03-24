@@ -1,5 +1,8 @@
+import { MutableRefObject } from "react";
 import styled from "styled-components";
-
+type IRef = {
+  ref: MutableRefObject<HTMLUListElement | undefined>;
+};
 export const main = styled.main`
   height: 100vh;
   max-width: 1280px;
@@ -12,7 +15,7 @@ export const main = styled.main`
   border-radius: 1rem;
   box-shadow: 0px 1px 15px 2px #00000021;
 `;
-export const listMsg = styled.ul`
+export const listMsg = styled.ul<IRef>`
   height: 100%;
   width: 100%;
   display: flex;
